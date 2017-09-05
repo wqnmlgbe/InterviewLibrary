@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 public @interface Schema {
 
     public String name();//点击跳转按钮上显示的文字内容
-    public Priority priority() default Priority.NORMAL;
+    public Priority priority() default Priority.LOW;
 }

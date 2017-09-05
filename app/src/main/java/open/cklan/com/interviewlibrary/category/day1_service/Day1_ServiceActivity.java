@@ -7,7 +7,7 @@ import com.example.Priority;
 import com.example.Schema;
 
 import open.cklan.com.interviewlibrary.R;
-@Schema(name = "service",priority = Priority.NORMAL)
+@Schema(name = "service",priority = Priority.HIGH)
 public class Day1_ServiceActivity extends AppCompatActivity {
 
     @Override
