@@ -16,6 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".category.day1_service.Day1_ServiceActivity"></activity>
+        <service android:name=".category.day1_service.Day1Service"/>
+        <service android:name=".category.day1_service.Day1IntentService"/>
+        <!--<receiver android:name=".category.day1_service.Day1_ServiceActivity$Receiver"/>-->
     </application>
 
 </manifest>
