@@ -6,9 +6,10 @@ import android.os.Bundle;
 import com.example.Priority;
 import com.example.Schema;
 
+import open.cklan.com.interviewlibrary.BaseActivity;
 import open.cklan.com.interviewlibrary.R;
 @Schema(name = "service",priority = Priority.HIGH)
-public class Day1_ServiceActivity extends AppCompatActivity {
+public class Day1_ServiceActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -13,10 +13,11 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import open.cklan.com.interviewlibrary.BaseActivity;
 import open.cklan.com.interviewlibrary.R;
 
-public class MainActivity extends AppCompatActivity implements OnItemClickListener {
-
+public class MainActivity extends BaseActivity implements OnItemClickListener {
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     List<CategoryItem> categoryItemList;
@@ -25,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView= (RecyclerView) findViewById(R.id.recyclerView);
+        ButterKnife.bind(this);
+
         categoryItemList= SchemaRepositoryHelper.initCategoryData();
         adapter=new CategoryListAdapter(categoryItemList,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     @Override
     public void onItemClick(CategoryItem categoryItem) {
         Intent intent=new Intent();
+        intent.putExtra(BUNDLE_ARG_TITLE,categoryItem.name);
         intent.setClassName(this,categoryItem.className);
         startActivity(intent);
 

@@ -29,7 +29,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_category,null);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_category,parent,false);
         return new CategoryViewHolder(view);
     }
 
@@ -45,12 +45,12 @@ public class CategoryListAdapter extends RecyclerView.Adapter {
     }
 
     public  class CategoryViewHolder extends RecyclerView.ViewHolder{
-
+        @BindView(R.id.tv_category)
         TextView tvCategory;
 
         public CategoryViewHolder(View itemView) {
             super(itemView);
-            tvCategory= (TextView) itemView.findViewById(R.id.tv_category);
+            ButterKnife.bind(this,itemView);
 
         }
 
