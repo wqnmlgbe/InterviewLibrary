@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.Note;
 import com.example.bean.CategoryItem;
 import com.example.generate.helper.SchemaRepositoryHelper;
 
@@ -15,7 +16,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import open.cklan.com.interviewlibrary.BaseActivity;
 import open.cklan.com.interviewlibrary.R;
-
+@Note("1.通过被跳转界面加上Schema注解，编译时遍历所有Schema注解的Activity，加入List\n" +
+        "2.List存放被跳转页面的class路径和标题")
 public class MainActivity extends BaseActivity implements OnItemClickListener {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;

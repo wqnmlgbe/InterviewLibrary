@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_day1__service"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="open.cklan.com.interviewlibrary.category.day1_service.Day1_ServiceActivity">
+
+    <TextView
+        android:id="@+id/tv_back"
+        android:text="点我返回"
+        style="@style/TextViewStyle"/>
+
+</LinearLayout>

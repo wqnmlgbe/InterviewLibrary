@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="open.cklan.com.interviewlibrary">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,10 +14,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".home.NoteActivity"></activity>
+        <!-- day1 -->
         <activity android:name=".category.day1_service.Day1_ServiceActivity"></activity>
         <service android:name=".category.day1_service.Day1Service"/>
         <service android:name=".category.day1_service.Day1IntentService"/>
         <!--<receiver android:name=".category.day1_service.Day1_ServiceActivity$Receiver"/>-->
+
+        <!-- day2 -->
+        <activity android:name=".category.day2_broadcast.Day2BroadcastActivity"/>
+
+        <!-- day3 -->
+        <activity android:name=".category.day3_activity.Day3Activity"/>
+        <activity android:name=".category.day3_activity.Day3SencondActivity"/>
+        <activity android:name=".category.day3_activity.Day3DialogActivity" android:theme="@style/Theme.AppCompat.DayNight.Dialog"/>
+
+        <!-- day4 -->
+        <activity android:name=".category.day4_view_save_state.Day4ViewSaveStateActivity"/>
+
+        <!-- day5 -->
+        <activity android:name=".category.day5_language.Day5LanguageActivity"/>
     </application>
+
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
 
 </manifest>

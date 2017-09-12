@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_day1__service"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="open.cklan.com.interviewlibrary.category.day1_service.Day1_ServiceActivity">
+    <TextView
+        android:id="@+id/tv_send_normal_broadcast"
+        android:text="send_normal_broadcast"
+        style="@style/TextViewStyle" />
+    <TextView
+        android:id="@+id/tv_send_orderd_broadcast"
+        android:text="send_orderd_broadcast"
+        style="@style/TextViewStyle" />
+    <TextView
+        android:id="@+id/tv_send_sticky_broadcast"
+        android:text="send_sticky_broadcast"
+        style="@style/TextViewStyle"/>
+    <TextView
+        android:id="@+id/tv_send_local_broadcast"
+        android:text="send_by_local_broadcast_manager"
+        style="@style/TextViewStyle"/>
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="16sp"
+        android:text="显示结果:"
+        android:scrollbars="vertical"
+        android:maxLines="100"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:background="#000000"/>
+</LinearLayout>

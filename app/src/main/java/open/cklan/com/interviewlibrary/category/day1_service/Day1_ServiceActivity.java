@@ -28,7 +28,7 @@ import butterknife.OnClick;
 import open.cklan.com.interviewlibrary.BaseActivity;
 import open.cklan.com.interviewlibrary.R;
 
-@Schema(name = "service", priority = Priority.HIGH)
+@Schema(name = "service")
 public class Day1_ServiceActivity extends BaseActivity {
 
     @BindView(R.id.tv_show)

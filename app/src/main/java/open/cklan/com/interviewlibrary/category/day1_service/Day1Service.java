@@ -7,14 +7,18 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.example.Note;
+
 /**
  * AUTHOR：lanchuanke on 17/9/6 11:10
- * 原理总结：1启动service的两种方式   startService   bindService
- *         2.startService启动service之后，会回调onCreate onStartCommand  多次启动不会重复调用onCreate,但会多次调用onStartCommand
- *         3.stopService停止service会回调onDestroy;
- *         4.bindService 如果之前没有startService，会回调onCreate onBind onServiceConnected,如果service已经create了，只会回调onBind onServiceConneted
- *         5.unbindService 解绑service会回调onUnbind onDestroy ,如果之前调用过onStart则不会回调onDestroy  调用stopService才会onDestroy
  */
+@Note("原理总结：1启动service的两种方式   startService   bindService\n" +
+        " * 2.startService启动service之后，会回调onCreate onStartCommand  多次启动不会重复调用onCreate,但会多次调用onStartCommand\n" +
+        " * 3.stopService停止service会回调onDestroy;\n" +
+        " * 4.bindService 如果之前没有startService，会回调onCreate onBind onServiceConnected,如果service已经create了，只会回调onBind onServiceConneted\n" +
+        " * 5.unbindService 解绑service会回调onUnbind onDestroy ,如果之前调用过onStart则不会回调onDestroy  调用stopService才会onDestroy\n" +
+        " * 6.startForeground创建前台Service\n" +
+        " * 7.:remote配置为远程Service，和应用不在同一个进程，不能直接bindService，可以startService，如果要bindService，需用AIDL通信")
 public class Day1Service extends Service {
 
     @Override

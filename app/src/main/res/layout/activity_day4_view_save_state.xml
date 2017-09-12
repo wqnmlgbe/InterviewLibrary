@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#eeeeee"
+        android:hint="输入几个字,然后旋转屏幕，看看效果,设置了ID"
+        android:textSize="14sp"
+        android:id="@+id/edit_save"
+        android:layout_margin="10dp"
+        android:textColor="#000000"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#eeeeee"
+        android:hint="输入几个字,然后旋转屏幕，看看效果,没设置ID"
+        android:textSize="14sp"
+        android:layout_below="@+id/edit_save"
+        android:layout_margin="10dp"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:text="温馨提示：测试此功能需要打开手机的自动旋转屏幕,对比有无设置ID测试输入内容是否会自动保存"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        android:layout_margin="10dp"/>
+</RelativeLayout>
