@@ -12,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import open.cklan.com.interviewlibrary.category.day5_language.LanguageContextWrapper;
+import open.cklan.com.interviewlibrary.home.MainActivity;
 import open.cklan.com.interviewlibrary.home.NoteActivity;
 
 /**
@@ -23,6 +24,10 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle();
+        android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
+        if(supportActionBar!=null && !(this instanceof MainActivity)){
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     private void setTitle() {
@@ -46,6 +51,8 @@ public class BaseActivity extends AppCompatActivity {
         int id=item.getItemId();
         if(R.id.action_help==id){
             NoteActivity.toNoteActivity(this,this.getClass().getPackage().getName());
+        }else if(android.R.id.home==id){
+            finish();
         }
         return true;
     }

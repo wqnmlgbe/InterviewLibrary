@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="open.cklan.com.interviewlibrary">
     <application
+        android:name=".category.day8_launchmode.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -34,6 +35,28 @@
 
         <!-- day5 -->
         <activity android:name=".category.day5_language.Day5LanguageActivity"/>
+
+        <!-- day6 -->
+        <activity android:name=".category.day6_asynctask.Day6AsyncTaskActivity"/>
+
+        <!-- day7 -->
+        <activity android:name=".category.day7_contentProvider.Day7ContentProviderActivity"/>
+        <provider
+            android:authorities="open.cklan.com.interviewlibrary.category.day7_db_contentprovider"
+            android:name=".category.day7_contentProvider.db.DBContentProvider"
+            android:exported="true"/>
+        <provider
+            android:authorities="open.cklan.com.interviewlibrary.category.day7_sp_contentprovider"
+            android:name=".category.day7_contentProvider.sp.SPContentProvider"
+            android:exported="true"/>
+        <service android:name=".category.day7_contentProvider.Day7RemoteService"
+            android:process=":day7_remote"/>
+
+        <!-- day8 -->
+        <activity android:name=".category.day8_launchmode.StandardActivity" android:launchMode="standard" />
+        <activity android:name=".category.day8_launchmode.SingleTopActivity" android:launchMode="singleTop"/>
+        <activity android:name=".category.day8_launchmode.SingleTaskActivity" android:launchMode="singleTask" android:taskAffinity="open.cklan.custom.task"/>
+        <activity android:name=".category.day8_launchmode.SingleInstanceActivity" android:launchMode="singleInstance"/>
     </application>
 
     <uses-permission android:name="android.permission.BROADCAST_STICKY"/>

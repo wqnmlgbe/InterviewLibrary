@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,9 +38,21 @@ public class NoteActivity extends AppCompatActivity{
         setContentView(R.layout.activity_note);
         ButterKnife.bind(this);
         setTitle("笔记");
+        android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
+        if(supportActionBar!=null){
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
         packageName=getIntent().getStringExtra(BUNDLE_ARG_PACKAGE_NAME);
         NoteListAdapter adapter=new NoteListAdapter(NoteUtil.getNoteByPkg(this.getPackageCodePath(),packageName));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(android.R.id.home==item.getItemId()){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
