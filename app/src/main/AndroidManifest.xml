@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="open.cklan.com.interviewlibrary">
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".category.day8_launchmode.BaseApplication"
         android:allowBackup="true"
@@ -57,6 +58,27 @@
         <activity android:name=".category.day8_launchmode.SingleTopActivity" android:launchMode="singleTop"/>
         <activity android:name=".category.day8_launchmode.SingleTaskActivity" android:launchMode="singleTask" android:taskAffinity="open.cklan.custom.task"/>
         <activity android:name=".category.day8_launchmode.SingleInstanceActivity" android:launchMode="singleInstance"/>
+
+        <!-- day9 -->
+        <activity android:name=".category.day9_pathmeasure.Day9PathMeasureActivity"/>
+
+        <!-- day10 -->
+        <activity android:name=".category.day10_websocket.Day10WSActivity"/>
+        <service android:name=".category.day10_websocket.WSService"/>
+
+        <!-- day11 -->
+        <activity android:name=".category.day11_aidl.Day11AidlActivity"/>
+        <service android:name=".category.day11_aidl.AidlService" android:process=":day11_aidl">
+            <intent-filter>
+                <action android:name="open.cklan.com.day11_aidl"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </service>
+        <!-- day12 -->
+        <activity android:name=".category.day12_mvp.test.Day12MVPDaggerActivity"/>
+        <activity android:name=".category.day12_mvp.test.Day12MVPActivity"/>
+        <!-- day14 -->
+        <activity android:name=".category.day14_customview.Day14ViewActivity"/>
     </application>
 
     <uses-permission android:name="android.permission.BROADCAST_STICKY"/>

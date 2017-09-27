@@ -8,6 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Stack;
 
+import open.cklan.com.interviewlibrary.category.day12_mvp.componet.AppComponent;
+import open.cklan.com.interviewlibrary.category.day12_mvp.componet.DaggerAppComponent;
+import open.cklan.com.interviewlibrary.category.day12_mvp.module.AppModule;
+
 public class BaseApplication extends Application{
 
 	private HashMap<Integer, Stack<LaunchModeBaseActivity>> tasks;
@@ -15,12 +19,19 @@ public class BaseApplication extends Application{
 	private ActivityManager manager;
 	
 	private boolean intentFilterMode;
+
+	AppComponent appComponent;
 	
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
 		tasks = new HashMap<Integer, Stack<LaunchModeBaseActivity>>();
+		appComponent=DaggerAppComponent.builder().appModule(new AppModule(this)).build();
+	}
+
+	public AppComponent getAppComponent(){
+		return appComponent;
 	}
 	
 	public void pushToStack(LaunchModeBaseActivity activity){

@@ -7,18 +7,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.Priority;
 import com.example.Schema;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -43,7 +38,7 @@ public class Day1_ServiceActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_day1__service);
+        setContentView(R.layout.activity_day1_service);
         ButterKnife.bind(this);
         receiver = new Receiver();
         IntentFilter intentFilter = new IntentFilter();
