@@ -32,7 +32,7 @@ public class Day12MVPDaggerActivity extends BaseMVPDaggerActivity<Day12Presenter
     @Override
     protected void inject() {
         TestActivityComponent component=DaggerTestActivityComponent.builder()
-                .appComponent(getAppComponent())
+                .activityComponent(getActivityComp())
                 .testActivityModule(new TestActivityModule(this))
                 .testServiceModule(new TestServiceModule()).build();
         presenter=component.getTestPresenter();

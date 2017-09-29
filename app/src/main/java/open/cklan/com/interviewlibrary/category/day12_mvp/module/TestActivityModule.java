@@ -10,7 +10,7 @@ import open.cklan.com.interviewlibrary.category.day12_mvp.test.Day12View;
 /**
  * AUTHOR：lanchuanke on 17/9/27 15:36
  */
-@Module(includes = TestServiceModule.class)
+@Module(includes = {TestServiceModule.class})
 public class TestActivityModule {
     Day12View view;
 

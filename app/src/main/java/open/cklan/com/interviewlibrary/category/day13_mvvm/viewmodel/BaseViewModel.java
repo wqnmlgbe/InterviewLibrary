@@ -1,13 +1,11 @@
-package open.cklan.com.interviewlibrary.category.day12_mvp.presenter;
+package open.cklan.com.interviewlibrary.category.day13_mvvm.viewmodel;
 
 import android.content.Intent;
-import android.os.Bundle;
+import android.databinding.BaseObservable;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
-import io.reactivex.ObservableTransformer;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
@@ -17,19 +15,17 @@ import io.reactivex.schedulers.Schedulers;
 import open.cklan.com.interviewlibrary.category.day12_mvp.entity.HttpError;
 import open.cklan.com.interviewlibrary.category.day12_mvp.http.IRequestListener;
 import open.cklan.com.interviewlibrary.category.day12_mvp.http.exception.ExceptionEngine;
-import open.cklan.com.interviewlibrary.category.day12_mvp.http.rxjava.HttpResultFunc;
-import open.cklan.com.interviewlibrary.category.day12_mvp.http.rxjava.ServerResultFunc;
+import open.cklan.com.interviewlibrary.category.day12_mvp.presenter.IPresenterLifeCycle;
 import open.cklan.com.interviewlibrary.category.day12_mvp.views.BaseView;
-import retrofit2.Response;
 
 /**
  * AUTHOR：lanchuanke on 17/9/26 10:08
  */
-public abstract class BasePresenter<V extends BaseView> implements IPresenterLifeCycle {
+public abstract class BaseViewModel<V extends BaseView> extends BaseObservable implements IPresenterLifeCycle {
     protected V view;
     CompositeDisposable compositeDisposable;
 
-    public BasePresenter(V view) {
+    public BaseViewModel(V view) {
         this.view = view;
         compositeDisposable=new CompositeDisposable();
     }

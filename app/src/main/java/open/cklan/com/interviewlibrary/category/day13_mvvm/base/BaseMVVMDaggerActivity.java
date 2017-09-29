@@ -1,4 +1,4 @@
-package open.cklan.com.interviewlibrary.category.day12_mvp.base;
+package open.cklan.com.interviewlibrary.category.day13_mvvm.base;
 
 import android.app.Application;
 import android.content.Intent;
@@ -8,19 +8,20 @@ import android.support.annotation.Nullable;
 import javax.inject.Inject;
 
 import open.cklan.com.interviewlibrary.BaseActivity;
+import open.cklan.com.interviewlibrary.category.day12_mvp.base.PagePrompt;
 import open.cklan.com.interviewlibrary.category.day12_mvp.componet.ActivityComponent;
 import open.cklan.com.interviewlibrary.category.day12_mvp.componet.AppComponent;
 import open.cklan.com.interviewlibrary.category.day12_mvp.componet.DaggerActivityComponent;
 import open.cklan.com.interviewlibrary.category.day12_mvp.dialog.MessageDialog;
 import open.cklan.com.interviewlibrary.category.day12_mvp.module.ActivityModule;
-import open.cklan.com.interviewlibrary.category.day12_mvp.presenter.BasePresenter;
 import open.cklan.com.interviewlibrary.category.day12_mvp.views.BaseView;
+import open.cklan.com.interviewlibrary.category.day13_mvvm.viewmodel.BaseViewModel;
 import open.cklan.com.interviewlibrary.category.day8_launchmode.BaseApplication;
 
 /**
  * AUTHOR：lanchuanke on 17/9/26 10:08
  */
-public abstract class BaseMVPDaggerActivity<P extends BasePresenter> extends BaseActivity implements BaseView{
+public abstract class BaseMVVMDaggerActivity<V extends BaseViewModel> extends BaseActivity implements BaseView{
     PagePrompt pagePrompt;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public abstract class BaseMVPDaggerActivity<P extends BasePresenter> extends Bas
     }
 
     @Inject
-    protected P presenter;
+    protected V viewModel;
 
     protected abstract void inject();
 
@@ -44,9 +45,10 @@ public abstract class BaseMVPDaggerActivity<P extends BasePresenter> extends Bas
     }
 
     protected ActivityComponent getActivityComp(){
-       return DaggerActivityComponent.builder().activityModule(new ActivityModule(this))
+        return DaggerActivityComponent.builder().activityModule(new ActivityModule(this))
                 .appComponent(getAppComponent()).build();
     }
+
 
     @Override
     public void showProgressDialog() {
@@ -81,57 +83,57 @@ public abstract class BaseMVPDaggerActivity<P extends BasePresenter> extends Bas
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        if(presenter!=null){
-            presenter.onNewIntent(getIntent());
+        if(viewModel!=null){
+            viewModel.onNewIntent(getIntent());
         }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if(presenter!=null){
-            presenter.onStart();
+        if(viewModel!=null){
+            viewModel.onStart();
         }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if(presenter!=null){
-            presenter.onResume();
+        if(viewModel!=null){
+            viewModel.onResume();
         }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if(presenter!=null){
-            presenter.onPause();
+        if(viewModel!=null){
+            viewModel.onPause();
         }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if(presenter!=null){
-            presenter.onStop();
+        if(viewModel!=null){
+            viewModel.onStop();
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(presenter!=null){
-            presenter.onDestroy();
-            presenter.detachView();
+        if(viewModel!=null){
+            viewModel.onDestroy();
+            viewModel.detachView();
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(presenter!=null){
-            presenter.onActivityResult(requestCode,resultCode,data);
+        if(viewModel!=null){
+            viewModel.onActivityResult(requestCode,resultCode,data);
         }
     }
 

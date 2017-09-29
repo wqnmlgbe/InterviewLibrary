@@ -77,8 +77,9 @@
         <!-- day12 -->
         <activity android:name=".category.day12_mvp.test.Day12MVPDaggerActivity"/>
         <activity android:name=".category.day12_mvp.test.Day12MVPActivity"/>
-        <!-- day14 -->
-        <activity android:name=".category.day14_customview.Day14ViewActivity"/>
+        <!-- day13 -->
+        <activity android:name=".category.day13_mvvm.test.Day13SimpleMVVMActivity"/>
+        <activity android:name=".category.day13_mvvm.test.Day13MVVMActivity"/>
     </application>
 
     <uses-permission android:name="android.permission.BROADCAST_STICKY"/>

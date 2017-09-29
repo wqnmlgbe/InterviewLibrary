@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="open.cklan.com.interviewlibrary.category.day13_mvvm.viewmodel.Day13ViewModel"/>
+        <variable
+            name="viewModel"
+            type="Day13ViewModel"/>
+    </data>
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:adapter="@{viewModel.adapter}"
+        app:layoutManager="@{viewModel.layoutManager}"
+        />
+</layout>
