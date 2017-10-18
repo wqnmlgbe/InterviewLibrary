@@ -80,6 +80,10 @@
         <!-- day13 -->
         <activity android:name=".category.day13_mvvm.test.Day13SimpleMVVMActivity"/>
         <activity android:name=".category.day13_mvvm.test.Day13MVVMActivity"/>
+
+        <!-- day14 -->
+        <activity android:name=".category.day14_customview.Day14SignatureViewActivity"/>
+        <activity android:name=".category.day14_customview.Day14StickyRecyclerViewActivity"/>
     </application>
 
     <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
